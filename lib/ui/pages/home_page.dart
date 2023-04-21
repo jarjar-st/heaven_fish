@@ -6,11 +6,18 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      backgroundColor: Color.fromARGB(255, 225, 225, 225),
-      appBar: PreferredSize(
+    return Scaffold(
+      backgroundColor: const Color.fromARGB(255, 225, 225, 225),
+      appBar: const PreferredSize(
         preferredSize: Size(double.infinity, 180),
         child: CustomAppBar(),
+      ),
+      body: SingleChildScrollView(
+        child: Column(
+          children: const [
+            Text("Aqui ira el carousel"),
+          ],
+        ),
       ),
     );
   }
