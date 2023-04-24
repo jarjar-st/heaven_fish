@@ -32,7 +32,7 @@ class CustomAppBar extends StatelessWidget {
                 angle: 1.60,
                 child: Image.asset(
                   'assets/pez.png',
-                  height: 50,
+                  height: 40,
                   color: const Color.fromARGB(255, 0, 102, 199),
                 ),
               ),

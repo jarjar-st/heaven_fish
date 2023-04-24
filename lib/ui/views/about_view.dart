@@ -1,79 +1,140 @@
-import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 
 class About extends StatelessWidget {
   const About({
     super.key,
-    required this.buttonCarouselController,
   });
-
-  final CarouselController buttonCarouselController;
 
   @override
   Widget build(BuildContext context) {
-    return CarouselSlider(
-      carouselController: buttonCarouselController,
-      options: CarouselOptions(
-        height: 600.0,
-        viewportFraction: 1,
-      ),
-      items: [1, 2, 3, 4, 5].map((i) {
-        return Builder(
-          builder: (BuildContext context) {
-            return Stack(
-              children: [
-                Container(
-                  width: MediaQuery.of(context).size.width,
-                  margin: const EdgeInsets.symmetric(horizontal: 80.0),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: [
-                      Padding(
-                        padding: const EdgeInsets.only(left: 100, right: 20),
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Image.asset(
-                              'assets/pez.png',
-                              height: 50,
-                              color: const Color.fromARGB(255, 0, 102, 199),
-                            ),
-                            const Text(
-                              "FRESHNESS\nTHAT FALLS",
-                              style: TextStyle(
-                                color: Color.fromARGB(255, 0, 102, 199),
-                                fontWeight: FontWeight.w100,
-                                fontStyle: FontStyle.italic,
-                                fontSize: 70,
-                              ),
-                            ),
-                            const Text(
-                              "FROM ABOVE",
-                              style: TextStyle(
-                                color: Color.fromARGB(255, 0, 102, 199),
-                                fontFamily: 'Aleo',
-                                fontWeight: FontWeight.normal,
-                                fontStyle: FontStyle.italic,
-                                fontSize: 70,
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                      Expanded(
-                        child: Image.asset(
-                          "assets/Board.HeavenFish.Web.jpg",
-                          fit: BoxFit.cover,
-                        ),
-                      ),
-                    ],
+    return Container(
+      width: double.infinity,
+      height: 500,
+      color: const Color.fromARGB(255, 0, 102, 199),
+      child: CustomPaint(
+        painter: MyPainter(),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.start,
+          // crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            const Text(
+              "HEAVEN",
+              style: TextStyle(
+                color: Color.fromARGB(255, 0, 102, 199),
+                fontFamily: 'Aleo',
+                fontWeight: FontWeight.normal,
+                fontStyle: FontStyle.italic,
+                height: 0.1,
+              ),
+              textAlign: TextAlign.center,
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: const [
+                Text(
+                  "FROM",
+                  style: TextStyle(
+                    color: Color.fromARGB(255, 0, 102, 199),
+                    fontFamily: 'Aleo',
+                    fontWeight: FontWeight.normal,
+                    fontStyle: FontStyle.italic,
+                    fontSize: 6,
+                  ),
+                ),
+                Text(
+                  "FISH",
+                  style: TextStyle(
+                    color: Color.fromARGB(255, 0, 102, 199),
+                    fontFamily: 'Aleo',
+                    fontWeight: FontWeight.normal,
+                    fontStyle: FontStyle.italic,
+                  ),
+                  textAlign: TextAlign.center,
+                ),
+                Text(
+                  "YORO",
+                  style: TextStyle(
+                    color: Color.fromARGB(255, 0, 102, 199),
+                    fontFamily: 'Aleo',
+                    fontWeight: FontWeight.normal,
+                    fontStyle: FontStyle.italic,
+                    fontSize: 6,
                   ),
                 ),
               ],
-            );
-          },
-        );
-      }).toList(),
+            ),
+            const SizedBox(height: 50),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                const Text(
+                  "WHATS IS\nTHE LLUVIA\nDE PECES?",
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontFamily: 'Aleo',
+                    fontWeight: FontWeight.normal,
+                    fontStyle: FontStyle.italic,
+                    fontSize: 30,
+                  ),
+                ),
+                const Text(
+                  "Yoro's Lluvia de Peces (Fish Rain) is a meterological phenomenon that"
+                  "\noccurs annualy in the town of Yoro, Honduras, where it rains fish from the"
+                  "\nsky. The event, one of Honduras'wonders, is believed to be a miraculous act"
+                  "\nthat brings good luck and prosperity to the community."
+                  "\n\nWhile the scientific explanation behind the phenomenon is unclear, it's"
+                  "\nbelieved that the fish are lifted from nearby bodies of water and transported"
+                  "\nby strong winds before falling bac to the ground during rainfall.",
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 11,
+                    fontWeight: FontWeight.w100,
+                    fontStyle: FontStyle.italic,
+                  ),
+                ),
+                Image.asset(
+                  'assets/pez.png',
+                  height: 50,
+                  color: Colors.white,
+                ),
+                const Text(
+                  "Yoro's Lluvia de Peces (Fish Rain) is a meterological phenomenon that"
+                  "\noccurs annualy in the town of Yoro, Honduras, where it rains fish from the"
+                  "\nsky. The event, one of Honduras'wonders, is believed to be a miraculous act"
+                  "\nthat brings good luck and prosperity to the community."
+                  "\n\nWhile the scientific explanation behind the phenomenon is unclear, it's"
+                  "\nbelieved that the fish are lifted from nearby bodies of water and transported"
+                  "\nby strong winds before falling bac to the ground during rainfall.",
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 11,
+                    fontWeight: FontWeight.w100,
+                    fontStyle: FontStyle.italic,
+                  ),
+                ),
+              ],
+            )
+          ],
+        ),
+      ),
     );
   }
+}
+
+class MyPainter extends CustomPainter {
+  @override
+  void paint(Canvas canvas, Size size) {
+    Paint paint = Paint();
+    Path path = Path();
+    paint.color = const Color.fromARGB(255, 225, 225, 225);
+    path.moveTo(size.width * 0.40, 0);
+    path.lineTo(size.width * 0.5, size.height * 0.08);
+    path.lineTo(size.width * 0.60, 0);
+    path.close();
+    canvas.drawPath(path, paint);
+  }
+
+  @override
+  bool shouldRepaint(MyPainter oldDelegate) => true;
 }
