@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:heaven_fish/providers/page_provider.dart';
+import 'package:provider/provider.dart';
 
 class CustomAppBar extends StatelessWidget {
   const CustomAppBar({
@@ -7,6 +9,7 @@ class CustomAppBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final pageProvider = Provider.of<PageProvider>(context, listen: false);
     return AppBar(
       backgroundColor: Colors.transparent,
       flexibleSpace: Padding(
@@ -17,16 +20,31 @@ class CustomAppBar extends StatelessWidget {
             Expanded(
               child: Transform.rotate(
                 angle: 1.60,
-                child: Image.asset(
-                  'assets/pez.png',
-                  height: 20,
-                  color: const Color.fromARGB(255, 0, 102, 199),
+                child: GestureDetector(
+                  onTap: () => pageProvider.goTo(0),
+                  child: Image.asset(
+                    'assets/pez.png',
+                    height: 20,
+                    color: const Color.fromARGB(255, 0, 102, 199),
+                  ),
                 ),
               ),
             ),
             Expanded(child: Container()),
-            const Expanded(child: TextUnderlineButton(text: "ABOUT")),
-            const Expanded(child: TextUnderlineButton(text: "ORIGIN")),
+            Expanded(
+              child: TextUnderlineButton(
+                text: "ABOUT",
+                provider: pageProvider,
+                index: 1,
+              ),
+            ),
+            Expanded(
+              child: TextUnderlineButton(
+                text: "ORIGIN",
+                provider: pageProvider,
+                index: 2,
+              ),
+            ),
             Expanded(
               child: Transform.rotate(
                 angle: 1.60,
@@ -37,8 +55,20 @@ class CustomAppBar extends StatelessWidget {
                 ),
               ),
             ),
-            const Expanded(child: TextUnderlineButton(text: "TRADE MARK")),
-            const Expanded(child: TextUnderlineButton(text: "IMPACT")),
+            Expanded(
+              child: TextUnderlineButton(
+                text: "TRADE MARK",
+                provider: pageProvider,
+                index: 3,
+              ),
+            ),
+            Expanded(
+              child: TextUnderlineButton(
+                text: "IMPACT",
+                provider: pageProvider,
+                index: 4,
+              ),
+            ),
             Expanded(child: Container()),
             const Expanded(child: ShoPButton()),
           ],
@@ -56,10 +86,11 @@ class ShoPButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final pageProvider = Provider.of<PageProvider>(context, listen: false);
     return Row(
       children: [
         ElevatedButton(
-          onPressed: () {},
+          onPressed: () => pageProvider.goTo(5),
           style: const ButtonStyle(
             shadowColor: MaterialStatePropertyAll(
               Colors.transparent,
@@ -106,15 +137,19 @@ class ShoPButton extends StatelessWidget {
 
 class TextUnderlineButton extends StatelessWidget {
   final String text;
+  final PageProvider provider;
+  final int index;
   const TextUnderlineButton({
     super.key,
     required this.text,
+    required this.provider,
+    required this.index,
   });
 
   @override
   Widget build(BuildContext context) {
     return TextButton(
-      onPressed: () {},
+      onPressed: () => provider.goTo(index),
       child: Text(
         text,
         style: const TextStyle(

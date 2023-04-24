@@ -14,7 +14,7 @@ class CustomCarousel extends StatelessWidget {
     return CarouselSlider(
       carouselController: buttonCarouselController,
       options: CarouselOptions(
-        height: 430.0,
+        height: 420.0,
         viewportFraction: 1,
       ),
       items: [1, 2, 3, 4, 5].map((i) {
