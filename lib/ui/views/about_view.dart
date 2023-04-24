@@ -9,7 +9,6 @@ class About extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: double.infinity,
-      height: 500,
       color: const Color.fromARGB(255, 0, 102, 199),
       child: CustomPaint(
         painter: MyPainter(),
@@ -114,7 +113,9 @@ class About extends StatelessWidget {
                   ),
                 ),
               ],
-            )
+            ),
+            const SizedBox(height: 45),
+            Image.asset("assets/IMG_1319.JPG"),
           ],
         ),
       ),
@@ -129,7 +130,7 @@ class MyPainter extends CustomPainter {
     Path path = Path();
     paint.color = const Color.fromARGB(255, 225, 225, 225);
     path.moveTo(size.width * 0.40, 0);
-    path.lineTo(size.width * 0.5, size.height * 0.08);
+    path.lineTo(size.width * 0.5, size.height * 0.03);
     path.lineTo(size.width * 0.60, 0);
     path.close();
     canvas.drawPath(path, paint);
