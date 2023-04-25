@@ -10,72 +10,76 @@ class CustomAppBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final pageProvider = Provider.of<PageProvider>(context, listen: false);
-    return AppBar(
-      backgroundColor: Colors.transparent,
-      flexibleSpace: Padding(
-        padding: const EdgeInsets.symmetric(vertical: 50),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: [
-            Expanded(
-              child: Transform.rotate(
-                angle: 1.60,
-                child: GestureDetector(
-                  onTap: () => pageProvider.goTo(0),
+    if (MediaQuery.of(context).size.width < 622) {
+      return Drawer();
+    } else {
+      return AppBar(
+        backgroundColor: Colors.transparent,
+        flexibleSpace: Padding(
+          padding: const EdgeInsets.symmetric(vertical: 50),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              Expanded(
+                child: Transform.rotate(
+                  angle: 1.60,
+                  child: GestureDetector(
+                    onTap: () => pageProvider.goTo(0),
+                    child: Image.asset(
+                      'assets/pez.png',
+                      height: 20,
+                      color: const Color.fromARGB(255, 0, 102, 199),
+                    ),
+                  ),
+                ),
+              ),
+              Expanded(child: Container()),
+              Expanded(
+                child: TextUnderlineButton(
+                  text: "ABOUT",
+                  provider: pageProvider,
+                  index: 1,
+                ),
+              ),
+              Expanded(
+                child: TextUnderlineButton(
+                  text: "ORIGIN",
+                  provider: pageProvider,
+                  index: 2,
+                ),
+              ),
+              Expanded(
+                child: Transform.rotate(
+                  angle: 1.60,
                   child: Image.asset(
                     'assets/pez.png',
-                    height: 20,
+                    height: 40,
                     color: const Color.fromARGB(255, 0, 102, 199),
                   ),
                 ),
               ),
-            ),
-            Expanded(child: Container()),
-            Expanded(
-              child: TextUnderlineButton(
-                text: "ABOUT",
-                provider: pageProvider,
-                index: 1,
-              ),
-            ),
-            Expanded(
-              child: TextUnderlineButton(
-                text: "ORIGIN",
-                provider: pageProvider,
-                index: 2,
-              ),
-            ),
-            Expanded(
-              child: Transform.rotate(
-                angle: 1.60,
-                child: Image.asset(
-                  'assets/pez.png',
-                  height: 40,
-                  color: const Color.fromARGB(255, 0, 102, 199),
+              Expanded(
+                child: TextUnderlineButton(
+                  text: "TRADE MARK",
+                  provider: pageProvider,
+                  index: 3,
                 ),
               ),
-            ),
-            Expanded(
-              child: TextUnderlineButton(
-                text: "TRADE MARK",
-                provider: pageProvider,
-                index: 3,
+              Expanded(
+                child: TextUnderlineButton(
+                  text: "IMPACT",
+                  provider: pageProvider,
+                  index: 4,
+                ),
               ),
-            ),
-            Expanded(
-              child: TextUnderlineButton(
-                text: "IMPACT",
-                provider: pageProvider,
-                index: 4,
-              ),
-            ),
-            Expanded(child: Container()),
-            const Expanded(child: ShoPButton()),
-          ],
+              Expanded(child: Container()),
+              const Expanded(child: ShoPButton()),
+            ],
+          ),
         ),
-      ),
-      elevation: 0,
-    );
+        elevation: 0,
+      );
+    }
   }
 }
 

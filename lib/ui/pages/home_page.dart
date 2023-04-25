@@ -17,8 +17,9 @@ class HomePage extends StatelessWidget {
     CarouselController buttonCarouselController = CarouselController();
     return Scaffold(
       backgroundColor: const Color.fromARGB(255, 225, 225, 225),
+      drawer: (MediaQuery.of(context).size.width < 622) ? CustomAppBar() : null,
       appBar: const PreferredSize(
-        preferredSize: Size(double.infinity, 180),
+        preferredSize: Size(double.infinity, 130),
         child: CustomAppBar(),
       ),
       body: SingleChildScrollView(
@@ -32,7 +33,7 @@ class HomePage extends StatelessWidget {
                   buttonCarouselController: buttonCarouselController,
                 ),
                 Positioned(
-                  bottom: 150,
+                  bottom: 250,
                   child: IconButton(
                     onPressed: () => buttonCarouselController.previousPage(
                         duration: const Duration(milliseconds: 1000),
@@ -44,7 +45,7 @@ class HomePage extends StatelessWidget {
                 ),
                 Positioned(
                   right: 0,
-                  bottom: 150,
+                  bottom: 250,
                   child: IconButton(
                     onPressed: () => buttonCarouselController.nextPage(
                         duration: const Duration(milliseconds: 1000),
@@ -55,7 +56,7 @@ class HomePage extends StatelessWidget {
                   ),
                 ),
                 const Positioned(
-                  bottom: 0,
+                  bottom: 100,
                   left: 20,
                   child: Text(
                     "#HeavenFish",
@@ -71,8 +72,6 @@ class HomePage extends StatelessWidget {
                 ),
               ],
             ),
-
-            const SizedBox(height: 40),
             const About(),
             const OriginView(),
             const TrademarkView(),

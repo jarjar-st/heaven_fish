@@ -2,7 +2,7 @@ import 'package:fluro/fluro.dart';
 import 'package:heaven_fish/router/router_handlers.dart';
 
 class Flurorouter {
-  static final FluroRouter router = new FluroRouter();
+  static final FluroRouter router = FluroRouter();
 
   static void configureRoutes() {
     // Rutas

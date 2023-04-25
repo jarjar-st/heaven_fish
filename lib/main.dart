@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:heaven_fish/providers/page_provider.dart';
 import 'package:heaven_fish/router/router.dart';
-import 'package:heaven_fish/ui/pages/home_page.dart';
 import 'package:provider/provider.dart';
 
 void main() => runApp(const AppState());
@@ -13,7 +12,7 @@ class AppState extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiProvider(
         providers: [ChangeNotifierProvider(create: (_) => PageProvider())],
-        child: MyApp());
+        child: const MyApp());
   }
 }
 
