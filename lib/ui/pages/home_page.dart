@@ -20,7 +20,6 @@ class HomePage extends StatelessWidget {
     CarouselController buttonCarouselController = CarouselController();
     return Scaffold(
       backgroundColor: const Color.fromARGB(255, 225, 225, 225),
-      drawer: (MediaQuery.of(context).size.width < 622) ? CustomAppBar() : null,
       appBar: const PreferredSize(
         preferredSize: Size(double.infinity, 130),
         child: CustomAppBar(),

@@ -11,7 +11,80 @@ class CustomAppBar extends StatelessWidget {
   Widget build(BuildContext context) {
     final pageProvider = Provider.of<PageProvider>(context, listen: false);
     if (MediaQuery.of(context).size.width < 622) {
-      return Drawer();
+      return AppBar(
+        elevation: 0,
+        flexibleSpace: Padding(
+          padding: const EdgeInsets.symmetric(vertical: 50),
+          child: Transform.rotate(
+            angle: 1.60,
+            child: GestureDetector(
+              onTap: () => pageProvider.goTo(0),
+              child: Image.asset(
+                'assets/pez.png',
+                height: 30,
+                color: const Color.fromARGB(255, 0, 102, 199),
+              ),
+            ),
+          ),
+        ),
+        backgroundColor: Colors.transparent,
+        actions: [
+          PopupMenuButton(
+            icon: const Icon(
+              Icons.menu,
+              color: Color.fromARGB(255, 0, 102, 199),
+            ),
+            itemBuilder: (context) {
+              return [
+                PopupMenuItem(
+                  child: Transform.rotate(
+                    angle: 1.60,
+                    child: GestureDetector(
+                      onTap: () => pageProvider.goTo(0),
+                      child: Image.asset(
+                        'assets/pez.png',
+                        height: 20,
+                        color: const Color.fromARGB(255, 0, 102, 199),
+                      ),
+                    ),
+                  ),
+                ),
+                PopupMenuItem(
+                  child: TextUnderlineButton(
+                    text: "ABOUT",
+                    provider: pageProvider,
+                    index: 1,
+                  ),
+                ),
+                PopupMenuItem(
+                  child: TextUnderlineButton(
+                    text: "ORIGIN",
+                    provider: pageProvider,
+                    index: 1,
+                  ),
+                ),
+                PopupMenuItem(
+                  child: TextUnderlineButton(
+                    text: "TRADE MARK",
+                    provider: pageProvider,
+                    index: 2,
+                  ),
+                ),
+                PopupMenuItem(
+                  child: TextUnderlineButton(
+                    text: "IMPACT",
+                    provider: pageProvider,
+                    index: 3,
+                  ),
+                ),
+                const PopupMenuItem(
+                  child: ShoPButton(),
+                ),
+              ];
+            },
+          ),
+        ],
+      );
     } else {
       return AppBar(
         backgroundColor: Colors.transparent,
