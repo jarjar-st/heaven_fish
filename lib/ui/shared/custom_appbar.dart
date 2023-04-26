@@ -45,7 +45,7 @@ class CustomAppBar extends StatelessWidget {
                 child: TextUnderlineButton(
                   text: "ORIGIN",
                   provider: pageProvider,
-                  index: 2,
+                  index: 1,
                 ),
               ),
               Expanded(
@@ -62,14 +62,14 @@ class CustomAppBar extends StatelessWidget {
                 child: TextUnderlineButton(
                   text: "TRADE MARK",
                   provider: pageProvider,
-                  index: 3,
+                  index: 2,
                 ),
               ),
               Expanded(
                 child: TextUnderlineButton(
                   text: "IMPACT",
                   provider: pageProvider,
-                  index: 4,
+                  index: 3,
                 ),
               ),
               Expanded(child: Container()),
@@ -94,7 +94,7 @@ class ShoPButton extends StatelessWidget {
     return Row(
       children: [
         ElevatedButton(
-          onPressed: () => pageProvider.goTo(5),
+          onPressed: () => pageProvider.goTo(4),
           style: const ButtonStyle(
             shadowColor: MaterialStatePropertyAll(
               Colors.transparent,

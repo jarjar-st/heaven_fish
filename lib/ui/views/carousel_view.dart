@@ -5,6 +5,8 @@ import 'package:responsive_grid/responsive_grid.dart';
 final List<String> imgs = [
   "anna-atkins-rNBaaxyeWWM-unsplash.jpg",
   "assets/Board.HeavenFish.Web.jpg",
+  "hector-emilio-gonzalez-O0febF9UQro-unsplash.jpg",
+  "aaron-burden-aHqNIrN5U1g-unsplash.jpg",
 ];
 
 class CustomCarousel extends StatelessWidget {
@@ -18,12 +20,9 @@ class CustomCarousel extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final double width = MediaQuery.of(context).size.width;
-    final double height = MediaQuery.of(context).size.height;
     final bool isSmallScreen = width < 979;
-    final double padding = isSmallScreen ? 20 : 50;
     final double imageSize = isSmallScreen ? 35 : 50;
     final double fontSize = isSmallScreen ? 35 : 50;
-    final List<Widget> items;
 
     if (MediaQuery.of(context).size.width < 577) {
       return CarouselSlider(
@@ -31,6 +30,7 @@ class CustomCarousel extends StatelessWidget {
         options: CarouselOptions(
           viewportFraction: 1,
           height: 500,
+          autoPlay: true,
         ),
         items: [1, 2, 3, 4, 5].map((i) {
           return Builder(
@@ -56,7 +56,7 @@ class CustomCarousel extends StatelessWidget {
                             Text(
                               "FRESHNESS\nTHAT FALLS",
                               style: TextStyle(
-                                color: Color.fromARGB(255, 0, 102, 199),
+                                color: const Color.fromARGB(255, 0, 102, 199),
                                 fontWeight: FontWeight.w100,
                                 fontStyle: FontStyle.italic,
                                 fontSize: fontSize,
@@ -65,7 +65,7 @@ class CustomCarousel extends StatelessWidget {
                             Text(
                               "FROM ABOVE",
                               style: TextStyle(
-                                color: Color.fromARGB(255, 0, 102, 199),
+                                color: const Color.fromARGB(255, 0, 102, 199),
                                 fontFamily: 'Aleo',
                                 fontWeight: FontWeight.normal,
                                 fontStyle: FontStyle.italic,
@@ -89,6 +89,7 @@ class CustomCarousel extends StatelessWidget {
           options: CarouselOptions(
             viewportFraction: 1,
             height: 500,
+            autoPlay: true,
           ),
           items: imgSlider);
     }
@@ -127,8 +128,7 @@ final List<Widget> imgSlider = imgs
                                 child: const Text(
                                   "FRESHNESS\nTHAT FALLS",
                                   style: TextStyle(
-                                    color:
-                                        const Color.fromARGB(255, 0, 102, 199),
+                                    color: Color.fromARGB(255, 0, 102, 199),
                                     fontWeight: FontWeight.w100,
                                     fontStyle: FontStyle.italic,
                                     fontSize: 50,
@@ -140,8 +140,7 @@ final List<Widget> imgSlider = imgs
                                 child: const Text(
                                   "FROM ABOVE",
                                   style: TextStyle(
-                                    color:
-                                        const Color.fromARGB(255, 0, 102, 199),
+                                    color: Color.fromARGB(255, 0, 102, 199),
                                     fontFamily: 'Aleo',
                                     fontWeight: FontWeight.normal,
                                     fontStyle: FontStyle.italic,
@@ -174,159 +173,3 @@ final List<Widget> imgSlider = imgs
           },
         ))
     .toList();
-
-class Slide1 extends StatelessWidget {
-  const Slide1({
-    super.key,
-    required this.imageSize,
-    required this.fontSize,
-  });
-
-  final double imageSize;
-  final double fontSize;
-
-  @override
-  Widget build(BuildContext context) {
-    return ResponsiveGridRow(
-      crossAxisAlignment: CrossAxisAlignment.center,
-      children: [
-        ResponsiveGridCol(
-          md: 4,
-          sm: 4,
-          xs: 6,
-          child: Container(
-            padding: EdgeInsets.all(3),
-            child: ResponsiveGridRow(
-              children: [
-                ResponsiveGridCol(
-                  lg: 12,
-                  child: Image.asset(
-                    'assets/pez.png',
-                    height: imageSize,
-                    color: const Color.fromARGB(255, 0, 102, 199),
-                  ),
-                ),
-                ResponsiveGridCol(
-                  lg: 12,
-                  child: Text(
-                    "FRESHNESS\nTHAT FALLS",
-                    style: TextStyle(
-                      color: const Color.fromARGB(255, 0, 102, 199),
-                      fontWeight: FontWeight.w100,
-                      fontStyle: FontStyle.italic,
-                      fontSize: fontSize,
-                    ),
-                  ),
-                ),
-                ResponsiveGridCol(
-                  lg: 12,
-                  child: Text(
-                    "FROM ABOVE",
-                    style: TextStyle(
-                      color: const Color.fromARGB(255, 0, 102, 199),
-                      fontFamily: 'Aleo',
-                      fontWeight: FontWeight.normal,
-                      fontStyle: FontStyle.italic,
-                      fontSize: fontSize,
-                    ),
-                  ),
-                ),
-              ],
-            ),
-          ),
-        ),
-        ResponsiveGridCol(
-          md: 8,
-          sm: 8,
-          xs: 6,
-          child: Container(
-            height: 350,
-            child: Image.asset(
-              "assets/Board.HeavenFish.Web.jpg",
-              height: 350,
-              fit: BoxFit.cover,
-            ),
-          ),
-        ),
-      ],
-    );
-  }
-}
-
-class Slide2 extends StatelessWidget {
-  const Slide2({
-    super.key,
-    required this.imageSize,
-    required this.fontSize,
-  });
-
-  final double imageSize;
-  final double fontSize;
-
-  @override
-  Widget build(BuildContext context) {
-    return ResponsiveGridRow(
-      crossAxisAlignment: CrossAxisAlignment.center,
-      children: [
-        ResponsiveGridCol(
-          md: 4,
-          sm: 4,
-          xs: 6,
-          child: Container(
-            padding: EdgeInsets.all(3),
-            child: ResponsiveGridRow(
-              children: [
-                ResponsiveGridCol(
-                  lg: 12,
-                  child: Image.asset(
-                    'assets/pez.png',
-                    height: imageSize,
-                    color: const Color.fromARGB(255, 0, 102, 199),
-                  ),
-                ),
-                ResponsiveGridCol(
-                  lg: 12,
-                  child: Text(
-                    "FRESHNESS\nTHAT FALLS",
-                    style: TextStyle(
-                      color: const Color.fromARGB(255, 0, 102, 199),
-                      fontWeight: FontWeight.w100,
-                      fontStyle: FontStyle.italic,
-                      fontSize: fontSize,
-                    ),
-                  ),
-                ),
-                ResponsiveGridCol(
-                  lg: 12,
-                  child: Text(
-                    "FROM ABOVE",
-                    style: TextStyle(
-                      color: const Color.fromARGB(255, 0, 102, 199),
-                      fontFamily: 'Aleo',
-                      fontWeight: FontWeight.normal,
-                      fontStyle: FontStyle.italic,
-                      fontSize: fontSize,
-                    ),
-                  ),
-                ),
-              ],
-            ),
-          ),
-        ),
-        ResponsiveGridCol(
-          md: 8,
-          sm: 8,
-          xs: 6,
-          child: Container(
-            height: 350,
-            child: Image.asset(
-              "anna-atkins-rNBaaxyeWWM-unsplash.jpg",
-              height: 350,
-              fit: BoxFit.cover,
-            ),
-          ),
-        ),
-      ],
-    );
-  }
-}

@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:responsive_grid/responsive_grid.dart';
 
-class TrademarkView extends StatelessWidget {
-  const TrademarkView({super.key});
+class ImpactView extends StatelessWidget {
+  const ImpactView({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -16,16 +15,6 @@ class TrademarkView extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
             Expanded(
-              child: Container(
-                decoration: const BoxDecoration(
-                  image: DecorationImage(
-                    image: AssetImage('IMG_1159.jpg'),
-                    fit: BoxFit.cover,
-                  ),
-                ),
-              ),
-            ),
-            Expanded(
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.center,
@@ -35,7 +24,7 @@ class TrademarkView extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: const [
                       Text(
-                        "TRADEMARK",
+                        "IMPACT",
                         style: TextStyle(
                           color: Colors.white,
                           fontFamily: 'Aleo',
@@ -64,6 +53,12 @@ class TrademarkView extends StatelessWidget {
                 ],
               ),
             ),
+            Expanded(
+              child: Image.asset(
+                "assets/hector-emilio-gonzalez-O0febF9UQro-unsplash.jpg",
+                fit: BoxFit.cover,
+              ),
+            ),
           ],
         ),
       );
@@ -77,7 +72,7 @@ class TrademarkView extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: const [
             Text(
-              "TRADEMARK",
+              "IMPACT",
               style: TextStyle(
                 color: Colors.white,
                 fontFamily: 'Aleo',
@@ -114,15 +109,6 @@ class TrademarkView extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
             Expanded(
-              child: Container(
-                child: Image.asset(
-                  'IMG_1159.jpg',
-                  fit: BoxFit.cover,
-                  height: 250,
-                ),
-              ),
-            ),
-            Expanded(
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.center,
@@ -132,7 +118,7 @@ class TrademarkView extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: const [
                       Text(
-                        "TRADEMARK",
+                        "IMPACT",
                         style: TextStyle(
                           color: Colors.white,
                           fontFamily: 'Aleo',
@@ -167,6 +153,12 @@ class TrademarkView extends StatelessWidget {
                     ),
                   ),
                 ],
+              ),
+            ),
+            Expanded(
+              child: Image.asset(
+                "assets/oziel-gomez-iL-nzcmcnWc-unsplash.jpg",
+                fit: BoxFit.cover,
               ),
             ),
           ],

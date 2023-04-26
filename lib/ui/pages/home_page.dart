@@ -3,8 +3,11 @@ import 'package:flutter/material.dart';
 import 'package:heaven_fish/providers/page_provider.dart';
 import 'package:heaven_fish/ui/shared/custom_appbar.dart';
 import 'package:heaven_fish/ui/views/about_view.dart';
+import 'package:heaven_fish/ui/views/carousel_botton_view.dart';
 import 'package:heaven_fish/ui/views/carousel_view.dart';
+import 'package:heaven_fish/ui/views/impact_view.dart';
 import 'package:heaven_fish/ui/views/origin_view.dart';
+import 'package:heaven_fish/ui/views/shop_view.dart';
 import 'package:heaven_fish/ui/views/trademark_view.dart';
 import 'package:provider/provider.dart';
 
@@ -75,6 +78,9 @@ class HomePage extends StatelessWidget {
             const About(),
             const OriginView(),
             const TrademarkView(),
+            const ImpactView(),
+            const ShopView(),
+            CarouselBottomView(),
           ],
         ),
       ),
