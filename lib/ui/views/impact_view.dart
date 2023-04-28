@@ -148,10 +148,10 @@ class ImpactView extends StatelessWidget {
     } else {
       return Container(
         width: double.infinity,
-        height: 620,
         color: const Color.fromARGB(255, 0, 102, 199),
         child: Column(
           children: [
+            const SizedBox(height: 20),
             Row(
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
@@ -230,14 +230,18 @@ class ImpactView extends StatelessWidget {
                   ),
                 ),
                 Expanded(
-                  child: Image.asset(
-                    "assets/oziel-gomez-iL-nzcmcnWc-unsplash.jpg",
-                    fit: BoxFit.cover,
-                    height: 450,
+                  child: Container(
+                    height: 300,
+                    width: 500,
+                    child: Image.asset(
+                      "assets/oziel-gomez-iL-nzcmcnWc-unsplash.jpg",
+                      fit: BoxFit.cover,
+                    ),
                   ),
                 ),
               ],
             ),
+            const SizedBox(height: 11),
           ],
         ),
       );
