@@ -1,10 +1,15 @@
+import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+
+import '../../providers/page_provider.dart';
 
 class ImpactView extends StatelessWidget {
   const ImpactView({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final pageProvider = Provider.of<PageProvider>(context, listen: false);
     // if (MediaQuery.of(context).size.width < 1000 &&
     //     MediaQuery.of(context).size.width > 768) {
     //   return Container(
@@ -73,46 +78,61 @@ class ImpactView extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const Padding(
-              padding: EdgeInsets.only(left: 20),
-              child: Text(
-                "ORIGIN",
-                style: TextStyle(
-                  color: Colors.white,
-                  fontFamily: 'Aleo',
-                  fontWeight: FontWeight.normal,
-                  fontStyle: FontStyle.italic,
-                  fontSize: 30,
+            Padding(
+              padding: const EdgeInsets.only(left: 20),
+              child: FadeInRight(
+                duration: const Duration(milliseconds: 1600),
+                animate:
+                    (pageProvider.getPageIndex('impact') == 4) ? true : false,
+                child: const Text(
+                  "IMPACT",
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontFamily: 'Aleo',
+                    fontWeight: FontWeight.normal,
+                    fontStyle: FontStyle.italic,
+                    fontSize: 30,
+                  ),
+                  textAlign: TextAlign.left,
                 ),
-                textAlign: TextAlign.left,
               ),
             ),
             const SizedBox(height: 20),
-            const Padding(
-              padding: EdgeInsets.symmetric(horizontal: 20),
-              child: Text(
-                "Yoro's Lluvia de Peces (Fish Rain) is a meterological phenomenon that"
-                "occurs annualy in the town of Yoro, Honduras, where it rains fish from the"
-                "sky. The event, one of Honduras'wonders, is believed to be a miraculous act"
-                "that brings good luck and prosperity to the community."
-                "\n\nWhile the scientific explanation behind the phenomenon is unclear, it's"
-                "believed that the fish are lifted from nearby bodies of water and transported"
-                "by strong winds before falling bac to the ground during rainfall.",
-                style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 18,
-                  fontWeight: FontWeight.w100,
-                  fontStyle: FontStyle.italic,
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 20),
+              child: FadeInRight(
+                duration: const Duration(milliseconds: 1600),
+                animate:
+                    (pageProvider.getPageIndex('impact') == 4) ? true : false,
+                child: const Text(
+                  "Yoro's Lluvia de Peces (Fish Rain) is a meterological phenomenon that"
+                  "occurs annualy in the town of Yoro, Honduras, where it rains fish from the"
+                  "sky. The event, one of Honduras'wonders, is believed to be a miraculous act"
+                  "that brings good luck and prosperity to the community."
+                  "\n\nWhile the scientific explanation behind the phenomenon is unclear, it's"
+                  "believed that the fish are lifted from nearby bodies of water and transported"
+                  "by strong winds before falling bac to the ground during rainfall.",
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 18,
+                    fontWeight: FontWeight.w100,
+                    fontStyle: FontStyle.italic,
+                  ),
+                  textAlign: TextAlign.left,
                 ),
-                textAlign: TextAlign.left,
               ),
             ),
             const SizedBox(height: 20),
             Center(
-              child: Image.asset(
-                'assets/pez.png',
-                height: 50,
-                color: Colors.white,
+              child: FadeInRight(
+                duration: const Duration(milliseconds: 1600),
+                animate:
+                    (pageProvider.getPageIndex('impact') == 4) ? true : false,
+                child: Image.asset(
+                  'assets/pez.png',
+                  height: 50,
+                  color: Colors.white,
+                ),
               ),
             ),
             const SizedBox(height: 20),
@@ -146,32 +166,46 @@ class ImpactView extends StatelessWidget {
                           child: Column(
                             mainAxisAlignment: MainAxisAlignment.center,
                             crossAxisAlignment: CrossAxisAlignment.start,
-                            children: const [
-                              Text(
-                                "IMPACT",
-                                style: TextStyle(
-                                  color: Colors.white,
-                                  fontFamily: 'Aleo',
-                                  fontWeight: FontWeight.normal,
-                                  fontStyle: FontStyle.italic,
-                                  fontSize: 30,
+                            children: [
+                              FadeInRight(
+                                duration: const Duration(milliseconds: 1600),
+                                animate:
+                                    (pageProvider.getPageIndex('impact') == 4)
+                                        ? true
+                                        : false,
+                                child: const Text(
+                                  "IMPACT",
+                                  style: TextStyle(
+                                    color: Colors.white,
+                                    fontFamily: 'Aleo',
+                                    fontWeight: FontWeight.normal,
+                                    fontStyle: FontStyle.italic,
+                                    fontSize: 30,
+                                  ),
                                 ),
                               ),
-                              Text(
-                                "Yoro's Lluvia de Peces (Fish Rain) is a meterological phenomenon that"
-                                "occurs annualy in the town of Yoro, Honduras, where it rains fish from the"
-                                "sky. The event, one of Honduras'wonders, is believed to be a miraculous act"
-                                "that brings good luck and prosperity to the community."
-                                "\nWhile the scientific explanation behind the phenomenon is unclear, it's"
-                                "believed that the fish are lifted from nearby bodies of water and transported"
-                                "by strong winds before falling bac to the ground during rainfall.",
-                                style: TextStyle(
-                                  color: Colors.white,
-                                  fontSize: 17,
-                                  fontWeight: FontWeight.w100,
-                                  fontStyle: FontStyle.italic,
+                              FadeInRight(
+                                duration: const Duration(milliseconds: 1600),
+                                animate:
+                                    (pageProvider.getPageIndex('impact') == 4)
+                                        ? true
+                                        : false,
+                                child: const Text(
+                                  "Yoro's Lluvia de Peces (Fish Rain) is a meterological phenomenon that"
+                                  "occurs annualy in the town of Yoro, Honduras, where it rains fish from the"
+                                  "sky. The event, one of Honduras'wonders, is believed to be a miraculous act"
+                                  "that brings good luck and prosperity to the community."
+                                  "\nWhile the scientific explanation behind the phenomenon is unclear, it's"
+                                  "believed that the fish are lifted from nearby bodies of water and transported"
+                                  "by strong winds before falling bac to the ground during rainfall.",
+                                  style: TextStyle(
+                                    color: Colors.white,
+                                    fontSize: 17,
+                                    fontWeight: FontWeight.w100,
+                                    fontStyle: FontStyle.italic,
+                                  ),
+                                  textAlign: TextAlign.justify,
                                 ),
-                                textAlign: TextAlign.justify,
                               ),
                             ],
                           ),
@@ -179,10 +213,17 @@ class ImpactView extends StatelessWidget {
                       ),
                       Padding(
                         padding: const EdgeInsets.symmetric(horizontal: 30),
-                        child: Image.asset(
-                          'assets/pez.png',
-                          height: 50,
-                          color: Colors.white,
+                        child: FadeInRight(
+                          delay: const Duration(milliseconds: 800),
+                          duration: const Duration(milliseconds: 1600),
+                          animate: (pageProvider.getPageIndex('impact') == 4)
+                              ? true
+                              : false,
+                          child: Image.asset(
+                            'assets/pez.png',
+                            height: 50,
+                            color: Colors.white,
+                          ),
                         ),
                       ),
                     ],

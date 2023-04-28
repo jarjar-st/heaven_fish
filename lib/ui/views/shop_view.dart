@@ -39,9 +39,7 @@ class ShopView extends StatelessWidget {
                   sm: 12,
                   xl: 12,
                   xs: 12,
-                  child: Container(
-                    alignment: Alignment(0, 0),
-                  ),
+                  child: Container(),
                 ),
                 ResponsiveGridCol(
                   lg: 12,
@@ -49,8 +47,8 @@ class ShopView extends StatelessWidget {
                   sm: 12,
                   xl: 12,
                   xs: 12,
+                  // ignore: avoid_unnecessary_containers
                   child: Container(
-                    alignment: Alignment(0, 0),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.start,
                       children: [
@@ -76,15 +74,15 @@ class ShopView extends StatelessWidget {
                   sm: 12,
                   xl: 12,
                   xs: 12,
+                  // ignore: avoid_unnecessary_containers
                   child: Container(
-                    alignment: Alignment(0, 0),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.start,
                       children: [
                         Text(
                           "AND GET THE\nMOST DIVINE\nTASTE RIGHT\nTO YOUR\nDOORSTEP.",
                           style: TextStyle(
-                            color: Color.fromARGB(255, 0, 102, 199),
+                            color: const Color.fromARGB(255, 0, 102, 199),
                             fontWeight: FontWeight.w100,
                             fontStyle: FontStyle.italic,
                             fontSize: (MediaQuery.of(context).size.width < 329)
@@ -105,7 +103,6 @@ class ShopView extends StatelessWidget {
                   xs: 12,
                   child: Container(
                     padding: const EdgeInsets.symmetric(vertical: 10),
-                    alignment: Alignment(0, 0),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.start,
                       children: const [
@@ -129,8 +126,8 @@ class ShopView extends StatelessWidget {
                   sm: 12,
                   xl: 12,
                   xs: 12,
+                  // ignore: avoid_unnecessary_containers
                   child: Container(
-                    alignment: Alignment(0, 0),
                     child: Row(
                       children: const [
                         Text(
@@ -153,6 +150,7 @@ class ShopView extends StatelessWidget {
                   sm: 12,
                   xl: 12,
                   xs: 12,
+                  // ignore: avoid_unnecessary_containers
                   child: Container(
                     child: Padding(
                       padding: const EdgeInsets.only(right: 10),
@@ -357,7 +355,6 @@ class ShopView extends StatelessWidget {
                   xs: 12,
                   child: Container(
                     height: (MediaQuery.of(context).size.width < 768) ? 0 : 30,
-                    alignment: Alignment(0, 0),
                   ),
                 ),
                 ResponsiveGridCol(
@@ -368,7 +365,6 @@ class ShopView extends StatelessWidget {
                   xs: 0,
                   child: Container(
                     height: (MediaQuery.of(context).size.width < 768) ? 0 : 150,
-                    alignment: Alignment(0, 0),
                   ),
                 ),
                 ResponsiveGridCol(
@@ -377,8 +373,8 @@ class ShopView extends StatelessWidget {
                   sm: 12,
                   xl: 12,
                   xs: 12,
+                  // ignore: avoid_unnecessary_containers
                   child: Container(
-                    alignment: Alignment(0, 0),
                     child: ResponsiveGridRow(
                       children: [
                         ResponsiveGridCol(
@@ -389,7 +385,6 @@ class ShopView extends StatelessWidget {
                           xs: 12,
                           child: Container(
                             padding: const EdgeInsets.only(right: 60),
-                            alignment: Alignment(0, 0),
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.end,
                               children: [
@@ -409,8 +404,8 @@ class ShopView extends StatelessWidget {
                           sm: 12,
                           xl: 12,
                           xs: 12,
+                          // ignore: avoid_unnecessary_containers
                           child: Container(
-                            alignment: Alignment(0, 0),
                             child: Image.asset(
                               "assets/Caja.HeavenFish.png",
                               fit: BoxFit.contain,
@@ -426,7 +421,6 @@ class ShopView extends StatelessWidget {
                           xs: 12,
                           child: Container(
                             padding: const EdgeInsets.only(right: 40),
-                            alignment: Alignment(0, 0),
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.end,
                               children: [

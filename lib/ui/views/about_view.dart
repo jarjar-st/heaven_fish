@@ -368,9 +368,10 @@ class MyPainter extends CustomPainter {
     Paint paint = Paint();
     Path path = Path();
     paint.color = const Color.fromARGB(255, 225, 225, 225);
-    path.moveTo(size.width * 0.40, 0);
-    path.lineTo(size.width * 0.5, size.height * 0.09);
-    path.lineTo(size.width * 0.60, 0);
+    path.moveTo((size.width < 594) ? size.width * 0.37 : size.width * 0.40, 0);
+    path.lineTo(size.width * 0.5,
+        (size.height > 594) ? size.height * 0.048 : size.height * 0.09);
+    path.lineTo((size.width < 594) ? size.width * 0.63 : size.width * 0.60, 0);
     path.close();
     canvas.drawPath(path, paint);
   }

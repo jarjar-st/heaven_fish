@@ -22,6 +22,8 @@ final List<String> imgs2 = [
 //     .toList();
 
 class CarouselBottomView extends StatelessWidget {
+  const CarouselBottomView({super.key});
+
   @override
   Widget build(BuildContext context) {
     return ResponsiveGridRow(

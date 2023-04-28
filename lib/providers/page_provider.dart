@@ -5,20 +5,19 @@ class PageProvider extends ChangeNotifier {
   PageController scrollController = PageController();
 
   final List<String> _pages = [
-    // 'home',
+    'home',
     'about',
     'origin',
     'trademark',
     'impact',
     'shop',
-    // 'botton-carousel'
+    'botton-carousel'
   ];
 
   int _currentIndex = 0;
 
   createScrollController(String routeName) {
     scrollController = PageController(initialPage: getPageIndex(routeName));
-
     html.document.title = _pages[getPageIndex(routeName)];
 
     scrollController.addListener(() {

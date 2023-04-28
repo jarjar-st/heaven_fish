@@ -1,4 +1,3 @@
-import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:heaven_fish/providers/page_provider.dart';
 import 'package:heaven_fish/ui/shared/custom_appbar.dart';
@@ -17,7 +16,6 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final pageProvider = Provider.of<PageProvider>(context, listen: false);
-    CarouselController buttonCarouselController = CarouselController();
     return Scaffold(
       backgroundColor: const Color.fromARGB(255, 225, 225, 225),
       appBar: const PreferredSize(
@@ -27,14 +25,14 @@ class HomePage extends StatelessWidget {
       body: ListView(
         controller: pageProvider.scrollController,
         scrollDirection: Axis.vertical,
-        children: [
+        children: const [
           //*Carousel
-          CarouselTopView(buttonCarouselController: buttonCarouselController),
-          const About(),
-          const OriginView(),
-          const TrademarkView(),
-          const ImpactView(),
-          const ShopView(),
+          CarouselTopView(),
+          About(),
+          OriginView(),
+          TrademarkView(),
+          ImpactView(),
+          ShopView(),
           CarouselBottomView(),
         ],
       ),
@@ -45,42 +43,14 @@ class HomePage extends StatelessWidget {
 class CarouselTopView extends StatelessWidget {
   const CarouselTopView({
     super.key,
-    required this.buttonCarouselController,
   });
-
-  final CarouselController buttonCarouselController;
 
   @override
   Widget build(BuildContext context) {
     return Stack(
-      children: [
-        CustomCarousel(
-          buttonCarouselController: buttonCarouselController,
-        ),
+      children: const [
+        CustomCarousel(),
         Positioned(
-          bottom: 250,
-          child: IconButton(
-            onPressed: () => buttonCarouselController.previousPage(
-                duration: const Duration(milliseconds: 1000),
-                curve: Curves.linear),
-            icon: const Icon(Icons.arrow_back_ios_new_outlined),
-            color: const Color.fromARGB(255, 0, 102, 199),
-            iconSize: 40,
-          ),
-        ),
-        Positioned(
-          right: 0,
-          bottom: 250,
-          child: IconButton(
-            onPressed: () => buttonCarouselController.nextPage(
-                duration: const Duration(milliseconds: 1000),
-                curve: Curves.linear),
-            icon: const Icon(Icons.arrow_forward_ios_outlined),
-            color: const Color.fromARGB(255, 0, 102, 199),
-            iconSize: 40,
-          ),
-        ),
-        const Positioned(
           bottom: 100,
           left: 20,
           child: Text(

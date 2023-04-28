@@ -1,5 +1,3 @@
-import 'dart:math';
-
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:responsive_grid/responsive_grid.dart';
@@ -14,17 +12,10 @@ final List<String> imgs = [
 class CustomCarousel extends StatelessWidget {
   const CustomCarousel({
     Key? key,
-    required this.buttonCarouselController,
   }) : super(key: key);
-
-  final CarouselController buttonCarouselController;
 
   @override
   Widget build(BuildContext context) {
-    final double width = MediaQuery.of(context).size.width;
-    final bool isSmallScreen = width < 979;
-    final double imageSize = isSmallScreen ? 35 : 50;
-    final double fontSize = isSmallScreen ? 35 : 50;
     ResponsiveGridBreakpoints.value = ResponsiveGridBreakpoints(
       xs: 890,
       sm: 1095,
@@ -32,11 +23,10 @@ class CustomCarousel extends StatelessWidget {
       lg: 1440,
     );
     return CarouselSlider(
-      carouselController: buttonCarouselController,
       options: CarouselOptions(
         viewportFraction: 1,
         height: 600,
-        autoPlay: false,
+        autoPlay: true,
       ),
       items: imgSlider,
     );
@@ -57,8 +47,8 @@ final List<Widget> imgSlider = imgs
                 child: ResponsiveGridRow(
                   children: [
                     ResponsiveGridCol(
-                      lg: 1,
-                      md: 1,
+                      lg: 0,
+                      md: 0,
                       sm: 0,
                       xl: 1,
                       xs: 0,
@@ -70,6 +60,7 @@ final List<Widget> imgSlider = imgs
                       sm: 5,
                       xl: 4,
                       xs: 12,
+                      // ignore: sized_box_for_whitespace
                       child: Container(
                         height: (MediaQuery.of(context).size.width < 890)
                             ? 230
@@ -78,6 +69,7 @@ final List<Widget> imgSlider = imgs
                             ? ResponsiveGridRow(
                                 children: [
                                   ResponsiveGridCol(
+                                    // ignore: avoid_unnecessary_containers
                                     child: Container(
                                       child: Image.asset(
                                         'assets/pez.png',
@@ -92,6 +84,7 @@ final List<Widget> imgSlider = imgs
                                     ),
                                   ),
                                   ResponsiveGridCol(
+                                    // ignore: avoid_unnecessary_containers
                                     child: Container(
                                       child: Text(
                                         "FRESHNESS\nTHAT FALLS",
@@ -112,6 +105,7 @@ final List<Widget> imgSlider = imgs
                                     ),
                                   ),
                                   ResponsiveGridCol(
+                                    // ignore: avoid_unnecessary_containers
                                     child: Container(
                                       child: Text(
                                         "FROM ABOVE",
@@ -152,6 +146,7 @@ final List<Widget> imgSlider = imgs
                                     sm: 11,
                                     xl: 11,
                                     xs: 11,
+                                    // ignore: avoid_unnecessary_containers
                                     child: Container(
                                       child: Image.asset(
                                         'assets/pez.png',
@@ -183,6 +178,7 @@ final List<Widget> imgSlider = imgs
                                     sm: 12,
                                     xl: 11,
                                     xs: 11,
+                                    // ignore: avoid_unnecessary_containers
                                     child: Container(
                                       child: const Text(
                                         "FRESHNESS\nTHAT FALLS",
@@ -210,6 +206,7 @@ final List<Widget> imgSlider = imgs
                                     sm: 12,
                                     xl: 11,
                                     xs: 11,
+                                    // ignore: avoid_unnecessary_containers
                                     child: Container(
                                       child: const Text(
                                         "FROM ABOVE",
@@ -229,22 +226,22 @@ final List<Widget> imgSlider = imgs
                       ),
                     ),
                     ResponsiveGridCol(
-                      lg: 7,
-                      md: 7,
+                      lg: 8,
+                      md: 8,
                       sm: 7,
                       xl: 7,
                       xs: 12,
+                      // ignore: avoid_unnecessary_containers
                       child: Container(
-                        alignment: Alignment(0, 0),
                         child: Image.asset(
                           item,
                           fit: (MediaQuery.of(context).size.width < 890)
-                              ? BoxFit.cover
+                              ? BoxFit.contain
                               : BoxFit.cover,
                           width: 700,
                           height: (MediaQuery.of(context).size.width < 890)
                               ? 280
-                              : 380,
+                              : 450,
                         ),
                       ),
                     ),
