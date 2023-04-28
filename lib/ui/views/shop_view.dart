@@ -22,10 +22,7 @@ class ShopView extends StatelessWidget {
             sm: 1,
             xl: 1,
             xs: 1,
-            child: Container(
-              color: Colors.black,
-              height: 100,
-            ),
+            child: Container(),
           ),
           //Formulario
           ResponsiveGridCol(
@@ -43,10 +40,7 @@ class ShopView extends StatelessWidget {
                   xl: 12,
                   xs: 12,
                   child: Container(
-                    height: 30,
                     alignment: Alignment(0, 0),
-                    color: Colors.amber,
-                    child: Text("lg : 12"),
                   ),
                 ),
                 ResponsiveGridCol(
@@ -57,7 +51,6 @@ class ShopView extends StatelessWidget {
                   xs: 12,
                   child: Container(
                     alignment: Alignment(0, 0),
-                    color: Colors.black,
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.start,
                       children: [
@@ -85,7 +78,6 @@ class ShopView extends StatelessWidget {
                   xs: 12,
                   child: Container(
                     alignment: Alignment(0, 0),
-                    color: Colors.orange,
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.start,
                       children: [
@@ -114,7 +106,6 @@ class ShopView extends StatelessWidget {
                   child: Container(
                     padding: const EdgeInsets.symmetric(vertical: 10),
                     alignment: Alignment(0, 0),
-                    color: Colors.red,
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.start,
                       children: const [
@@ -140,7 +131,6 @@ class ShopView extends StatelessWidget {
                   xs: 12,
                   child: Container(
                     alignment: Alignment(0, 0),
-                    color: Colors.blue,
                     child: Row(
                       children: const [
                         Text(
@@ -164,7 +154,6 @@ class ShopView extends StatelessWidget {
                   xl: 12,
                   xs: 12,
                   child: Container(
-                    color: Colors.pink,
                     child: Padding(
                       padding: const EdgeInsets.only(right: 10),
                       child: Column(
@@ -335,7 +324,6 @@ class ShopView extends StatelessWidget {
                   xl: 12,
                   xs: 12,
                   child: Container(
-                    color: Colors.brown,
                     height: 50,
                   ),
                 ),
@@ -349,7 +337,6 @@ class ShopView extends StatelessWidget {
             xl: 0,
             xs: 1,
             child: Container(
-                color: Colors.black,
                 height: (MediaQuery.of(context).size.width > 768) ? 100 : 0),
           ),
 
@@ -371,8 +358,6 @@ class ShopView extends StatelessWidget {
                   child: Container(
                     height: (MediaQuery.of(context).size.width < 768) ? 0 : 30,
                     alignment: Alignment(0, 0),
-                    color: Colors.purple,
-                    child: Text("lg : 12"),
                   ),
                 ),
                 ResponsiveGridCol(
@@ -384,8 +369,6 @@ class ShopView extends StatelessWidget {
                   child: Container(
                     height: (MediaQuery.of(context).size.width < 768) ? 0 : 150,
                     alignment: Alignment(0, 0),
-                    color: Colors.green,
-                    child: Text("xs : 6 \r\nmd : 3"),
                   ),
                 ),
                 ResponsiveGridCol(
@@ -396,7 +379,6 @@ class ShopView extends StatelessWidget {
                   xs: 12,
                   child: Container(
                     alignment: Alignment(0, 0),
-                    color: Colors.orange,
                     child: ResponsiveGridRow(
                       children: [
                         ResponsiveGridCol(
@@ -408,7 +390,6 @@ class ShopView extends StatelessWidget {
                           child: Container(
                             padding: const EdgeInsets.only(right: 60),
                             alignment: Alignment(0, 0),
-                            color: Colors.purple,
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.end,
                               children: [
@@ -430,7 +411,6 @@ class ShopView extends StatelessWidget {
                           xs: 12,
                           child: Container(
                             alignment: Alignment(0, 0),
-                            color: Colors.green,
                             child: Image.asset(
                               "assets/Caja.HeavenFish.png",
                               fit: BoxFit.contain,
@@ -447,7 +427,6 @@ class ShopView extends StatelessWidget {
                           child: Container(
                             padding: const EdgeInsets.only(right: 40),
                             alignment: Alignment(0, 0),
-                            color: Colors.blue,
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.end,
                               children: [
