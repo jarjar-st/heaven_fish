@@ -60,21 +60,21 @@ class CustomAppBar extends StatelessWidget {
                   child: TextUnderlineButton(
                     text: "ORIGIN",
                     provider: pageProvider,
-                    index: 1,
+                    index: 2,
                   ),
                 ),
                 PopupMenuItem(
                   child: TextUnderlineButton(
                     text: "TRADE MARK",
                     provider: pageProvider,
-                    index: 2,
+                    index: 3,
                   ),
                 ),
                 PopupMenuItem(
                   child: TextUnderlineButton(
                     text: "IMPACT",
                     provider: pageProvider,
-                    index: 3,
+                    index: 4,
                   ),
                 ),
                 const PopupMenuItem(
@@ -118,7 +118,7 @@ class CustomAppBar extends StatelessWidget {
                 child: TextUnderlineButton(
                   text: "ORIGIN",
                   provider: pageProvider,
-                  index: 1,
+                  index: 2,
                 ),
               ),
               Expanded(
@@ -135,14 +135,14 @@ class CustomAppBar extends StatelessWidget {
                 child: TextUnderlineButton(
                   text: "TRADE MARK",
                   provider: pageProvider,
-                  index: 2,
+                  index: 3,
                 ),
               ),
               Expanded(
                 child: TextUnderlineButton(
                   text: "IMPACT",
                   provider: pageProvider,
-                  index: 3,
+                  index: 4,
                 ),
               ),
               Expanded(child: Container()),
@@ -167,7 +167,7 @@ class ShoPButton extends StatelessWidget {
     return Row(
       children: [
         ElevatedButton(
-          onPressed: () => pageProvider.goTo(4),
+          onPressed: () => pageProvider.goTo(5),
           style: const ButtonStyle(
             shadowColor: MaterialStatePropertyAll(
               Colors.transparent,

@@ -5,12 +5,13 @@ class PageProvider extends ChangeNotifier {
   PageController scrollController = PageController();
 
   final List<String> _pages = [
-    'home',
+    // 'home',
     'about',
     'origin',
     'trademark',
     'impact',
-    'shop'
+    'shop',
+    // 'botton-carousel'
   ];
 
   int _currentIndex = 0;

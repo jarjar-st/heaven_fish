@@ -24,65 +24,78 @@ class HomePage extends StatelessWidget {
         preferredSize: Size(double.infinity, 130),
         child: CustomAppBar(),
       ),
-      body: SingleChildScrollView(
+      body: ListView(
         controller: pageProvider.scrollController,
-        child: Column(
-          children: [
-            //*Carousel
-            Stack(
-              children: [
-                CustomCarousel(
-                  buttonCarouselController: buttonCarouselController,
-                ),
-                Positioned(
-                  bottom: 250,
-                  child: IconButton(
-                    onPressed: () => buttonCarouselController.previousPage(
-                        duration: const Duration(milliseconds: 1000),
-                        curve: Curves.linear),
-                    icon: const Icon(Icons.arrow_back_ios_new_outlined),
-                    color: const Color.fromARGB(255, 0, 102, 199),
-                    iconSize: 40,
-                  ),
-                ),
-                Positioned(
-                  right: 0,
-                  bottom: 250,
-                  child: IconButton(
-                    onPressed: () => buttonCarouselController.nextPage(
-                        duration: const Duration(milliseconds: 1000),
-                        curve: Curves.linear),
-                    icon: const Icon(Icons.arrow_forward_ios_outlined),
-                    color: const Color.fromARGB(255, 0, 102, 199),
-                    iconSize: 40,
-                  ),
-                ),
-                const Positioned(
-                  bottom: 100,
-                  left: 20,
-                  child: Text(
-                    "#HeavenFish",
-                    style: TextStyle(
-                      color: Color.fromARGB(255, 0, 102, 199),
-                      fontFamily: 'Aleo',
-                      fontWeight: FontWeight.normal,
-                      fontStyle: FontStyle.italic,
-                      height: 0.1,
-                    ),
-                    textAlign: TextAlign.left,
-                  ),
-                ),
-              ],
-            ),
-            const About(),
-            const OriginView(),
-            const TrademarkView(),
-            const ImpactView(),
-            const ShopView(),
-            CarouselBottomView(),
-          ],
-        ),
+        scrollDirection: Axis.vertical,
+        children: [
+          //*Carousel
+          CarouselTopView(buttonCarouselController: buttonCarouselController),
+          const About(),
+          const OriginView(),
+          const TrademarkView(),
+          const ImpactView(),
+          const ShopView(),
+          CarouselBottomView(),
+        ],
       ),
+    );
+  }
+}
+
+class CarouselTopView extends StatelessWidget {
+  const CarouselTopView({
+    super.key,
+    required this.buttonCarouselController,
+  });
+
+  final CarouselController buttonCarouselController;
+
+  @override
+  Widget build(BuildContext context) {
+    return Stack(
+      children: [
+        CustomCarousel(
+          buttonCarouselController: buttonCarouselController,
+        ),
+        Positioned(
+          bottom: 250,
+          child: IconButton(
+            onPressed: () => buttonCarouselController.previousPage(
+                duration: const Duration(milliseconds: 1000),
+                curve: Curves.linear),
+            icon: const Icon(Icons.arrow_back_ios_new_outlined),
+            color: const Color.fromARGB(255, 0, 102, 199),
+            iconSize: 40,
+          ),
+        ),
+        Positioned(
+          right: 0,
+          bottom: 250,
+          child: IconButton(
+            onPressed: () => buttonCarouselController.nextPage(
+                duration: const Duration(milliseconds: 1000),
+                curve: Curves.linear),
+            icon: const Icon(Icons.arrow_forward_ios_outlined),
+            color: const Color.fromARGB(255, 0, 102, 199),
+            iconSize: 40,
+          ),
+        ),
+        const Positioned(
+          bottom: 100,
+          left: 20,
+          child: Text(
+            "#HeavenFish",
+            style: TextStyle(
+              color: Color.fromARGB(255, 0, 102, 199),
+              fontFamily: 'Aleo',
+              fontWeight: FontWeight.normal,
+              fontStyle: FontStyle.italic,
+              height: 0.1,
+            ),
+            textAlign: TextAlign.left,
+          ),
+        ),
+      ],
     );
   }
 }

@@ -1,5 +1,6 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
+import 'package:responsive_grid/responsive_grid.dart';
 
 final List<String> imgs2 = [
   "anna-atkins-rNBaaxyeWWM-unsplash.jpg",
@@ -23,62 +24,82 @@ final List<String> imgs2 = [
 class CarouselBottomView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Column(
+    return ResponsiveGridRow(
       children: [
-        Container(
-          child: CarouselSlider.builder(
-            options: CarouselOptions(
-              height: 250,
-              enlargeCenterPage: false,
-              viewportFraction: 1,
-              autoPlay: true,
+        ResponsiveGridCol(
+          child: Container(
+            color: Colors.white,
+            child: CarouselSlider.builder(
+              options: CarouselOptions(
+                height: 300,
+                enlargeCenterPage: false,
+                viewportFraction: 1,
+                autoPlay: true,
+              ),
+              itemCount: (imgs2.length / 3).round(),
+              itemBuilder: (context, index, realIdx) {
+                final int first = index * 3;
+                final int second = first + 1;
+                final int third = second + 1;
+                return Row(
+                  children: [first, second, third].map((idx) {
+                    return Expanded(
+                      flex: 1,
+                      child: Container(
+                        margin: const EdgeInsets.symmetric(horizontal: 1),
+                        child: Image.asset(
+                          imgs2[idx],
+                          fit: BoxFit.cover,
+                          alignment: Alignment.topCenter,
+                          height: 300,
+                        ),
+                      ),
+                    );
+                  }).toList(),
+                );
+              },
             ),
-            itemCount: (imgs2.length / 3).round(),
-            itemBuilder: (context, index, realIdx) {
-              final int first = index * 3;
-              final int second = first + 1;
-              final int third = second + 1;
-              return Row(
-                children: [first, second, third].map((idx) {
-                  return Expanded(
-                    flex: 1,
-                    child: Container(
-                      margin: const EdgeInsets.symmetric(horizontal: 1),
-                      child: Image.asset(imgs2[idx], fit: BoxFit.cover),
-                    ),
-                  );
-                }).toList(),
-              );
-            },
           ),
         ),
-        const SizedBox(height: 30),
-        Container(
-          child: CarouselSlider.builder(
-            options: CarouselOptions(
-              height: 250,
-              enlargeCenterPage: false,
-              viewportFraction: 1,
-              autoPlay: true,
-              autoPlayInterval: const Duration(milliseconds: 5000),
+        ResponsiveGridCol(
+            child: Container(
+          color: Colors.white,
+          height: 30,
+        )),
+        ResponsiveGridCol(
+          child: Container(
+            color: Colors.white,
+            child: CarouselSlider.builder(
+              options: CarouselOptions(
+                height: 300,
+                enlargeCenterPage: false,
+                viewportFraction: 1,
+                autoPlay: true,
+                autoPlayInterval: const Duration(milliseconds: 5000),
+              ),
+              itemCount: (imgs2.length / 3).round(),
+              itemBuilder: (context, index, realIdx) {
+                final int first = index * 3;
+                final int second = first + 1;
+                final int third = second + 1;
+                return Row(
+                  children: [first, second, third].map((idx) {
+                    return Expanded(
+                      flex: 1,
+                      child: Container(
+                        margin: const EdgeInsets.symmetric(horizontal: 1),
+                        child: Image.asset(
+                          imgs2[idx],
+                          fit: BoxFit.cover,
+                          alignment: Alignment.topCenter,
+                          height: 300,
+                        ),
+                      ),
+                    );
+                  }).toList(),
+                );
+              },
             ),
-            itemCount: (imgs2.length / 3).round(),
-            itemBuilder: (context, index, realIdx) {
-              final int first = index * 3;
-              final int second = first + 1;
-              final int third = second + 1;
-              return Row(
-                children: [first, second, third].map((idx) {
-                  return Expanded(
-                    flex: 1,
-                    child: Container(
-                      margin: const EdgeInsets.symmetric(horizontal: 1),
-                      child: Image.asset(imgs2[idx], fit: BoxFit.cover),
-                    ),
-                  );
-                }).toList(),
-              );
-            },
           ),
         ),
       ],
