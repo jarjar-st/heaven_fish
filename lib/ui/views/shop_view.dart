@@ -364,7 +364,7 @@ class ShopView extends StatelessWidget {
                   xl: 12,
                   xs: 0,
                   child: Container(
-                    height: (MediaQuery.of(context).size.width < 768) ? 0 : 150,
+                    height: (MediaQuery.of(context).size.width < 768) ? 0 : 60,
                   ),
                 ),
                 ResponsiveGridCol(
@@ -389,8 +389,8 @@ class ShopView extends StatelessWidget {
                               mainAxisAlignment: MainAxisAlignment.end,
                               children: [
                                 Image.asset(
-                                  "assets/pez.png",
-                                  height: 50,
+                                  "assets/Recurso7.png",
+                                  height: 100,
                                   fit: BoxFit.contain,
                                   color: Colors.red,
                                 ),
@@ -409,7 +409,7 @@ class ShopView extends StatelessWidget {
                             child: Image.asset(
                               "assets/Caja.HeavenFish.png",
                               fit: BoxFit.contain,
-                              height: 300,
+                              height: 400,
                             ),
                           ),
                         ),
@@ -421,29 +421,16 @@ class ShopView extends StatelessWidget {
                           xs: 12,
                           child: Container(
                             padding: const EdgeInsets.only(right: 40),
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.end,
-                              children: [
-                                Image.asset(
-                                  "assets/pez.png",
-                                  height: 30,
-                                  fit: BoxFit.contain,
-                                  color: const Color.fromARGB(255, 0, 102, 199),
-                                ),
-                                Image.asset(
-                                  "assets/pez.png",
-                                  height: 30,
-                                  fit: BoxFit.contain,
-                                  color: const Color.fromARGB(255, 0, 102, 199),
-                                ),
-                                Image.asset(
-                                  "assets/pez.png",
-                                  height: 30,
-                                  fit: BoxFit.contain,
-                                  color: const Color.fromARGB(255, 0, 102, 199),
-                                ),
-                              ],
+                            child: Image.asset(
+                              "assets/Recurso6.png",
+                              height: 50,
+                              alignment: Alignment.centerRight,
                             ),
+                          ),
+                        ),
+                        ResponsiveGridCol(
+                          child: Container(
+                            height: 50,
                           ),
                         ),
                       ],

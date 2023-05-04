@@ -9,6 +9,6 @@ final homeHandler = Handler(handlerFunc: (context, params) {
     final pageProvider = Provider.of<PageProvider>(context!, listen: false);
     pageProvider.createScrollController(page);
 
-    return const HomePage();
+    return HomePage();
   }
 });

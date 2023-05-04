@@ -26,85 +26,246 @@ class CarouselBottomView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ResponsiveGridRow(
-      children: [
-        ResponsiveGridCol(
-          child: Container(
-            color: Colors.white,
-            child: CarouselSlider.builder(
-              options: CarouselOptions(
-                height: 300,
-                enlargeCenterPage: false,
-                viewportFraction: 1,
-                autoPlay: true,
-              ),
-              itemCount: (imgs2.length / 3).round(),
-              itemBuilder: (context, index, realIdx) {
-                final int first = index * 3;
-                final int second = first + 1;
-                final int third = second + 1;
-                return Row(
-                  children: [first, second, third].map((idx) {
-                    return Expanded(
-                      flex: 1,
-                      child: Container(
-                        margin: const EdgeInsets.symmetric(horizontal: 1),
-                        child: Image.asset(
-                          imgs2[idx],
-                          fit: BoxFit.cover,
-                          alignment: Alignment.topCenter,
-                          height: 300,
-                        ),
-                      ),
-                    );
-                  }).toList(),
-                );
-              },
-            ),
-          ),
-        ),
-        ResponsiveGridCol(
+    if (MediaQuery.of(context).size.width < 849 &&
+        MediaQuery.of(context).size.width > 427) {
+      return ResponsiveGridRow(
+        children: [
+          ResponsiveGridCol(
             child: Container(
-          color: Colors.white,
-          height: 30,
-        )),
-        ResponsiveGridCol(
-          child: Container(
-            color: Colors.white,
-            child: CarouselSlider.builder(
-              options: CarouselOptions(
-                height: 300,
-                enlargeCenterPage: false,
-                viewportFraction: 1,
-                autoPlay: true,
-                autoPlayInterval: const Duration(milliseconds: 5000),
-              ),
-              itemCount: (imgs2.length / 3).round(),
-              itemBuilder: (context, index, realIdx) {
-                final int first = index * 3;
-                final int second = first + 1;
-                final int third = second + 1;
-                return Row(
-                  children: [first, second, third].map((idx) {
-                    return Expanded(
-                      flex: 1,
-                      child: Container(
-                        margin: const EdgeInsets.symmetric(horizontal: 1),
-                        child: Image.asset(
-                          imgs2[idx],
-                          fit: BoxFit.cover,
-                          alignment: Alignment.topCenter,
-                          height: 300,
+              color: Colors.white,
+              child: CarouselSlider.builder(
+                options: CarouselOptions(
+                  height: 300,
+                  enlargeCenterPage: false,
+                  viewportFraction: 1,
+                  autoPlay: true,
+                ),
+                itemCount: (imgs2.length / 2).round(),
+                itemBuilder: (context, index, realIdx) {
+                  final int first = index * 2;
+                  final int second = first + 1;
+                  return Row(
+                    children: [first, second].map((idx) {
+                      return Expanded(
+                        flex: 1,
+                        child: Container(
+                          margin: const EdgeInsets.symmetric(horizontal: 1),
+                          child: Image.asset(
+                            imgs2[idx],
+                            fit: BoxFit.cover,
+                            alignment: Alignment.topCenter,
+                            height: 300,
+                          ),
                         ),
-                      ),
-                    );
-                  }).toList(),
-                );
-              },
+                      );
+                    }).toList(),
+                  );
+                },
+              ),
             ),
           ),
-        ),
-      ],
-    );
+          ResponsiveGridCol(
+            child: Container(
+              color: Colors.white,
+              height: 30,
+            ),
+          ),
+          ResponsiveGridCol(
+            child: Container(
+              color: Colors.white,
+              child: CarouselSlider.builder(
+                options: CarouselOptions(
+                  height: 300,
+                  enlargeCenterPage: false,
+                  viewportFraction: 1,
+                  autoPlay: true,
+                  autoPlayInterval: const Duration(milliseconds: 5000),
+                ),
+                itemCount: (imgs2.length / 2).round(),
+                itemBuilder: (context, index, realIdx) {
+                  final int first = index * 2;
+                  final int second = first + 1;
+                  return Row(
+                    children: [first, second].map((idx) {
+                      return Expanded(
+                        flex: 1,
+                        child: Container(
+                          margin: const EdgeInsets.symmetric(horizontal: 1),
+                          child: Image.asset(
+                            imgs2[idx],
+                            fit: BoxFit.cover,
+                            alignment: Alignment.topCenter,
+                            height: 300,
+                          ),
+                        ),
+                      );
+                    }).toList(),
+                  );
+                },
+              ),
+            ),
+          ),
+        ],
+      );
+    }
+    if (MediaQuery.of(context).size.width < 428) {
+      return ResponsiveGridRow(
+        children: [
+          ResponsiveGridCol(
+            child: Container(
+              color: Colors.white,
+              child: CarouselSlider.builder(
+                options: CarouselOptions(
+                  height: 300,
+                  enlargeCenterPage: false,
+                  viewportFraction: 1,
+                  autoPlay: true,
+                ),
+                itemCount: imgs2.length,
+                itemBuilder: (context, index, realIdx) {
+                  return Row(
+                    children: [index].map((idx) {
+                      return Expanded(
+                        flex: 1,
+                        child: Container(
+                          margin: const EdgeInsets.symmetric(horizontal: 1),
+                          child: Image.asset(
+                            imgs2[idx],
+                            fit: BoxFit.cover,
+                            alignment: Alignment.topCenter,
+                            height: 300,
+                          ),
+                        ),
+                      );
+                    }).toList(),
+                  );
+                },
+              ),
+            ),
+          ),
+          ResponsiveGridCol(
+            child: Container(
+              color: Colors.white,
+              height: 30,
+            ),
+          ),
+          ResponsiveGridCol(
+            child: Container(
+              color: Colors.white,
+              child: CarouselSlider.builder(
+                options: CarouselOptions(
+                  height: 300,
+                  enlargeCenterPage: false,
+                  viewportFraction: 1,
+                  autoPlay: true,
+                  autoPlayInterval: const Duration(milliseconds: 5000),
+                ),
+                itemCount: imgs2.length,
+                itemBuilder: (context, index, realIdx) {
+                  return Row(
+                    children: [index].map((idx) {
+                      return Expanded(
+                        flex: 1,
+                        child: Container(
+                          margin: const EdgeInsets.symmetric(horizontal: 1),
+                          child: Image.asset(
+                            imgs2[idx],
+                            fit: BoxFit.cover,
+                            alignment: Alignment.topCenter,
+                            height: 300,
+                          ),
+                        ),
+                      );
+                    }).toList(),
+                  );
+                },
+              ),
+            ),
+          ),
+        ],
+      );
+    } else {
+      return ResponsiveGridRow(
+        children: [
+          ResponsiveGridCol(
+            child: Container(
+              color: Colors.white,
+              child: CarouselSlider.builder(
+                options: CarouselOptions(
+                  height: 300,
+                  enlargeCenterPage: false,
+                  viewportFraction: 1,
+                  autoPlay: true,
+                ),
+                itemCount: (imgs2.length / 3).round(),
+                itemBuilder: (context, index, realIdx) {
+                  final int first = index * 3;
+                  final int second = first + 1;
+                  final int third = second + 1;
+                  return Row(
+                    children: [first, second, third].map((idx) {
+                      return Expanded(
+                        flex: 1,
+                        child: Container(
+                          margin: const EdgeInsets.symmetric(horizontal: 1),
+                          child: Image.asset(
+                            imgs2[idx],
+                            fit: BoxFit.cover,
+                            alignment: Alignment.topCenter,
+                            height: 300,
+                          ),
+                        ),
+                      );
+                    }).toList(),
+                  );
+                },
+              ),
+            ),
+          ),
+          ResponsiveGridCol(
+            child: Container(
+              color: Colors.white,
+              height: 30,
+            ),
+          ),
+          ResponsiveGridCol(
+            child: Container(
+              color: Colors.white,
+              child: CarouselSlider.builder(
+                options: CarouselOptions(
+                  height: 300,
+                  enlargeCenterPage: false,
+                  viewportFraction: 1,
+                  autoPlay: true,
+                  autoPlayInterval: const Duration(milliseconds: 5000),
+                ),
+                itemCount: (imgs2.length / 3).round(),
+                itemBuilder: (context, index, realIdx) {
+                  final int first = index * 3;
+                  final int second = first + 1;
+                  final int third = second + 1;
+                  return Row(
+                    children: [first, second, third].map((idx) {
+                      return Expanded(
+                        flex: 1,
+                        child: Container(
+                          margin: const EdgeInsets.symmetric(horizontal: 1),
+                          child: Image.asset(
+                            imgs2[idx],
+                            fit: BoxFit.cover,
+                            alignment: Alignment.topCenter,
+                            height: 300,
+                          ),
+                        ),
+                      );
+                    }).toList(),
+                  );
+                },
+              ),
+            ),
+          ),
+        ],
+      );
+    }
   }
 }

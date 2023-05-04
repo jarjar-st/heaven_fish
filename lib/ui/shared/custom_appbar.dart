@@ -20,7 +20,7 @@ class CustomAppBar extends StatelessWidget {
             child: GestureDetector(
               onTap: () => pageProvider.goTo(0),
               child: Image.asset(
-                'assets/pez.png',
+                'assets/Recurso5.png',
                 height: 30,
                 color: const Color.fromARGB(255, 0, 102, 199),
               ),
@@ -34,51 +34,104 @@ class CustomAppBar extends StatelessWidget {
               Icons.menu,
               color: Color.fromARGB(255, 0, 102, 199),
             ),
+            constraints: BoxConstraints(
+              maxWidth: MediaQuery.of(context).size.width * 0.50,
+              maxHeight: double.infinity,
+              minHeight: double.infinity,
+            ),
+            shape: const RoundedRectangleBorder(
+              borderRadius: BorderRadius.only(
+                bottomLeft: Radius.circular(20),
+                topLeft: Radius.circular(20),
+              ),
+            ),
             itemBuilder: (context) {
               return [
                 PopupMenuItem(
-                  child: Transform.rotate(
-                    angle: 1.60,
-                    child: GestureDetector(
-                      onTap: () => pageProvider.goTo(0),
-                      child: Image.asset(
-                        'assets/pez.png',
-                        height: 20,
-                        color: const Color.fromARGB(255, 0, 102, 199),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      GestureDetector(
+                        onTap: () => pageProvider.goTo(0),
+                        child: Image.asset(
+                          'assets/Recurso8.png',
+                          height: 120,
+                          color: const Color.fromARGB(255, 0, 102, 199),
+                        ),
                       ),
-                    ),
+                    ],
                   ),
                 ),
                 PopupMenuItem(
-                  child: TextUnderlineButton(
-                    text: "ABOUT",
-                    provider: pageProvider,
-                    index: 1,
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      TextUnderlineButton(
+                        text: "ABOUT",
+                        provider: pageProvider,
+                        index: 1,
+                      ),
+                    ],
                   ),
                 ),
                 PopupMenuItem(
-                  child: TextUnderlineButton(
-                    text: "ORIGIN",
-                    provider: pageProvider,
-                    index: 2,
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      TextUnderlineButton(
+                        text: "ORIGIN",
+                        provider: pageProvider,
+                        index: 2,
+                      ),
+                    ],
                   ),
                 ),
                 PopupMenuItem(
-                  child: TextUnderlineButton(
-                    text: "TRADE MARK",
-                    provider: pageProvider,
-                    index: 3,
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      TextUnderlineButton(
+                        text: "TRADE MARK",
+                        provider: pageProvider,
+                        index: 3,
+                      ),
+                    ],
                   ),
                 ),
                 PopupMenuItem(
-                  child: TextUnderlineButton(
-                    text: "IMPACT",
-                    provider: pageProvider,
-                    index: 4,
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      TextUnderlineButton(
+                        text: "IMPACT",
+                        provider: pageProvider,
+                        index: 4,
+                      ),
+                    ],
                   ),
                 ),
-                const PopupMenuItem(
-                  child: ShoPButton(),
+                PopupMenuItem(
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: const [
+                      ShoPButton(),
+                    ],
+                  ),
+                ),
+                PopupMenuItem(
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      GestureDetector(
+                        onTap: () => pageProvider.goTo(0),
+                        child: Image.asset(
+                          'assets/Recurso5.png',
+                          height: 80,
+                          color: const Color.fromARGB(255, 0, 102, 199),
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
               ];
             },
@@ -94,15 +147,12 @@ class CustomAppBar extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
               Expanded(
-                child: Transform.rotate(
-                  angle: 1.60,
-                  child: GestureDetector(
-                    onTap: () => pageProvider.goTo(0),
-                    child: Image.asset(
-                      'assets/pez.png',
-                      height: 20,
-                      color: const Color.fromARGB(255, 0, 102, 199),
-                    ),
+                child: GestureDetector(
+                  onTap: () => pageProvider.goTo(0),
+                  child: Image.asset(
+                    'assets/Recurso5.png',
+                    color: const Color.fromARGB(255, 0, 102, 199),
+                    fit: BoxFit.contain,
                   ),
                 ),
               ),

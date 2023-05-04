@@ -1,4 +1,8 @@
+// ignore_for_file: public_member_api_docs, sort_constructors_first
+import 'package:carousel_slider/carousel_controller.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+
 import 'package:heaven_fish/providers/page_provider.dart';
 import 'package:heaven_fish/ui/shared/custom_appbar.dart';
 import 'package:heaven_fish/ui/views/about_view.dart';
@@ -8,10 +12,9 @@ import 'package:heaven_fish/ui/views/impact_view.dart';
 import 'package:heaven_fish/ui/views/origin_view.dart';
 import 'package:heaven_fish/ui/views/shop_view.dart';
 import 'package:heaven_fish/ui/views/trademark_view.dart';
-import 'package:provider/provider.dart';
 
 class HomePage extends StatelessWidget {
-  const HomePage({super.key});
+  HomePage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -25,15 +28,16 @@ class HomePage extends StatelessWidget {
       body: ListView(
         controller: pageProvider.scrollController,
         scrollDirection: Axis.vertical,
-        children: const [
+        children: [
           //*Carousel
           CarouselTopView(),
-          About(),
-          OriginView(),
-          TrademarkView(),
-          ImpactView(),
-          ShopView(),
-          CarouselBottomView(),
+          const About(),
+          const OriginView(),
+          const TrademarkView(),
+          const ImpactView(),
+          const ShopView(),
+          const CarouselBottomView(),
+          const Footer(),
         ],
       ),
     );
@@ -41,16 +45,43 @@ class HomePage extends StatelessWidget {
 }
 
 class CarouselTopView extends StatelessWidget {
-  const CarouselTopView({
-    super.key,
-  });
+  CarouselController controller = CarouselController();
+  CarouselTopView({
+    Key? key,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Stack(
-      children: const [
-        CustomCarousel(),
+      children: [
+        CustomCarousel(
+          controller: controller,
+        ),
         Positioned(
+          bottom: 400,
+          left: -10,
+          child: IconButton(
+            onPressed: () {
+              controller.previousPage();
+            },
+            icon: const Icon(Icons.arrow_back_ios_new_outlined),
+            iconSize: 40,
+            color: const Color.fromARGB(255, 0, 102, 199),
+          ),
+        ),
+        Positioned(
+          bottom: 400,
+          right: -10,
+          child: IconButton(
+            onPressed: () {
+              controller.nextPage();
+            },
+            icon: const Icon(Icons.arrow_forward_ios_outlined),
+            iconSize: 40,
+            color: const Color.fromARGB(255, 0, 102, 199),
+          ),
+        ),
+        const Positioned(
           bottom: 100,
           left: 20,
           child: Text(
@@ -66,6 +97,24 @@ class CarouselTopView extends StatelessWidget {
           ),
         ),
       ],
+    );
+  }
+}
+
+class Footer extends StatelessWidget {
+  const Footer({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      height: 200,
+      color: const Color.fromARGB(255, 0, 102, 199),
+      child: Center(
+        child: Image.asset(
+          "assets/Recurso8.png",
+          height: 150,
+        ),
+      ),
     );
   }
 }
